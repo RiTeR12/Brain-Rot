@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .score-text {
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20%;
+        }
+
+        .titles {
+            font-family: Arial;
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .question {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .option {
+            margin-bottom: 5px;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        
+        .result {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .video-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .video-container video {
+            width: 200px;
+            height: 400px;
+        }
+    </style>
+    <title class="titles">Brain-Rot Exam</title>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <p class="titles"><u>Brain-Rot Exam</u></p>
+        <div id="question1" class="question">
+            <p>1. What is the name of the song played at the TikTok Rizz Party?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question1" value="fuk sumn">
+                    <label for="fuk sumn">Fuk Sumn</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question1" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Carnival</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question1" value="talking">
+                    <label for="talking">Talking</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question1" value="hoodrat">
+                    <label for="hoodrat">Hoodrat</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(1)">Submit</button>
+        </div>
+
+        <div id="question2" class="question hidden">
+            <p>2. What is the state with the wierdest stuff happening in it?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question2" value="paris">
+                    <label for="paris">Alabama</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question2" value="london">
+                    <label for="london">California</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question2" value="berlin">
+                    <label for="berlin">Texas</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question2" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Ohio</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(2)">Submit</button>
+        </div>
+
+        <div id="question3" class="question hidden">
+            <p>3. Complete the sentence: "Erm, what the..."</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question3" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Sigma</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question3" value="london">
+                    <label for="london">Skibidi</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question3" value="berlin">
+                    <label for="berlin">Fanum</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question3" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Ohio</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(3)">Submit</button>
+        </div>
+
+        <div id="question4" class="question hidden">
+            <p>4. Who rizzed up baby gronk while in Ohio?"</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question4" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Livvy Dunne</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question4" value="london">
+                    <label for="london">Kai Cenat</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question4" value="berlin">
+                    <label for="berlin">Fanum</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question4" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Nicky Minaj</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(4)">Submit</button>
+        </div>
+
+        <div id="question5" class="question hidden">
+            <p>5. Who do you stick your gyatt out for?"</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question5" value="FREAKYFRITER">
+                    <label for="FREAKYFRITER">The Sigma</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question5" value="london">
+                    <label for="london">The Skibidi Sigma</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question5" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">The Rizzler</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question5" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Daniel Primo</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(5)">Submit</button>
+        </div>
+
+        <div id="question6" class="question hidden">
+            <p>6. Who is the group leader of the Tiktok Rizz Party?"</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question6" value="FREAKYRITTER">
+                    <label for="FREAKYRITTER">Dat Boi</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question6" value="london">
+                    <label for="london">Fanum</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question6" value="berlin">
+                    <label for="berlin">Baby Gronk</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question6" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Blue Tie Kid</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(6)">Submit</button>
+        </div>
+
+        <div id="question7" class="question hidden">
+            <p>7. Who is the greatest risk to the leadership of the Tiktok Rizz Party?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question7" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Kai Cenat</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question7" value="london">
+                    <label for="london">Green Tie Kid</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question7" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Gold Tie Kid</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question7" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Obamna</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(7)">Submit</button>
+        </div>
+
+        <div id="question8" class="question hidden">
+            <p>8. At what school do neferious acts take place?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question8" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">The Nueva School</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question8" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Miller Grove</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question8" value="FREAKYFRITTE">
+                    <label for="FREAKYFRITTE">Choate Rosemary Hall</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question8" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Commonwealth School</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(8)">Submit</button>
+        </div>
+
+        <div id="question9" class="question hidden">
+            <p>9. Who is the man that cant lose?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question9" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Ian Hawke</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question9" value="london">
+                    <label for="london">Blue Tie Kid</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question9" value="FREAKYFRITTR">
+                    <label for="FREAKYFRITTR">Mr. Belding</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question9" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Kai Cenat</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(9)">Submit</button>
+        </div>
+
+        <div id="question10" class="question hidden">
+            <p>10. Who is this?</p>
+            <img src="Dat-Boi.png">
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="question10" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Baby Gronk</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question10" value="london">
+                    <label for="london">Fanum</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question10" value="FRAKYFRITTER">
+                    <label for="FRAKYFRITTER">Kai Cenat</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="question10" value="FREAKYFRITTER">
+                    <label for="FREAKYFRITTER">Dat Boi</label>
+                </div>
+            </div>
+            <button class="submit-btn" onclick="submitAnswer(10)">Submit</button>
+        </div>
+
+        <div class="video-container">
+            <video id="background-video" autoplay loop muted>
+                <source src="SubwaySurfurs.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+
+        
+        function submitAnswer(questionNumber) {
+            // Get selected answer
+            var selectedAnswer = document.querySelector('input[name="question' + questionNumber + '"]:checked');
+
+            // Check if an answer is selected
+            if (selectedAnswer) {
+                // Check the value of the selected answer
+                if (selectedAnswer.value === "FREAKYFRITTER") {
+                    //alert("Correct!"); // You can replace this with your own logic
+                    score++;
+                } 
+                else {
+                    //alert("Incorrect!"); // You can replace this with your own logic
+                }
+                // Hide current question
+                document.getElementById('question' + questionNumber).classList.add('hidden');
+                // Show next question
+                var nextQuestionNumber = questionNumber + 1;
+                if(nextQuestionNumber <= 10) {
+                    document.getElementById('question' + nextQuestionNumber).classList.remove('hidden');
+                } else {
+                    showResult();
+                }
+ 
+            } else {
+                alert("Please select an answer.");
+            } 
+            
+        }
+
+        function showResult() {
+            document.body.innerHTML = '';
+            document.body.innerHTML = '<p class="score-text">Your score: ' + score + '/10</p>';
+            if (score >= 7) {
+                document.body.innerHTML = '<p class="score-text">Fellow sigma, you are cooked!</p>';
+            } else if (score < 7 && score >=4) {
+                document.body.innerHTML = '<p class="score-text">Keep mogging young padwan</p>';
+            } else {
+                document.body.innerHTML = '<p class="score-text">Go back to gooning before I fanum tax you!</p>';
+            }
+        }
+        
+    </script>
+
+</body>
+
+</html>
